@@ -1,0 +1,7 @@
+# Chỉ đưa website lên GitHub; các tệp dưới đây chỉ giữ trên máy
+image/
+*.pdf
+bao-cao/
+AUDIT_REPORT.md
+IMPROVEMENT_PLAN.md
+THONG_TIN_CAN_CUNG_CAP.md
