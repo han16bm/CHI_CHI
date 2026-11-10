@@ -22,23 +22,25 @@ const PROJECTS = [
   const body = document.body;
   const root = body.dataset.root || "";   // "../" cho các trang trong /projects/
   const page = body.dataset.page;          // about | projects | conclusion | bai-1..bai-6
+  const logo = `${root}assets/img/logo.svg`;
+  const inProjects = page === "projects" || page.startsWith("bai-");
 
   const subItems = PROJECTS.map((p, i) =>
     `<li><a href="${root}projects/${p.id}.html"${page === p.id ? ' aria-current="page"' : ""}>Bài ${i + 1}. ${p.title}<small>${p.chapter}</small></a></li>`
   ).join("");
-  const cur = (k) => (page === k ? ' aria-current="page"' : "");
+  const cur = (on) => (on ? ' aria-current="page"' : "");
 
   document.getElementById("site-header").outerHTML = `
   <a class="skip" href="#main">Bỏ qua điều hướng</a>
   <header class="site-header">
     <div class="container nav-bar">
-      <a class="brand" href="${root}index.html"><span class="brand-mark">QH</span>${SITE.shortName}</a>
+      <a class="brand" href="${root}index.html"><img src="${logo}" alt="" width="40" height="40">${SITE.shortName}</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" aria-label="Điều hướng chính">
         <ul>
-          <li><a href="${root}index.html"${cur("about")}>Giới thiệu</a></li>
-          <li class="has-sub"><a href="${root}projects.html"${cur("projects")}>Dự án</a><ul class="sub">${subItems}</ul></li>
-          <li><a href="${root}conclusion.html"${cur("conclusion")}>Tổng kết</a></li>
+          <li><a href="${root}index.html"${cur(page === "about")}>Giới thiệu</a></li>
+          <li class="has-sub"><a href="${root}projects.html"${cur(inProjects)}>Dự án</a><ul class="sub">${subItems}</ul></li>
+          <li><a href="${root}conclusion.html"${cur(page === "conclusion")}>Tổng kết</a></li>
         </ul>
       </nav>
     </div>
@@ -46,21 +48,21 @@ const PROJECTS = [
 
   document.getElementById("site-footer").outerHTML = `
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p><strong>${SITE.fullName}</strong></p>
-        <p>Mã sinh viên: ${SITE.studentId}</p>
-        <p>Lớp: ${SITE.className}</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="${logo}" alt="" width="44" height="44">
+          <div><strong>${SITE.fullName}</strong>Sư phạm Âm nhạc · Portfolio ${SITE.courseCode}</div>
+        </div>
+        <nav class="footer-nav" aria-label="Điều hướng chân trang">
+          <a href="${root}index.html">Giới thiệu</a><a href="${root}projects.html">Dự án</a><a href="${root}conclusion.html">Tổng kết</a>
+        </nav>
       </div>
-      <div>
-        <p><strong>Học phần</strong></p>
-        <p>${SITE.course} (${SITE.courseCode})</p>
-        <p>${SITE.school}</p>
+      <div class="footer-info">
+        <p><span>Mã sinh viên</span>${SITE.studentId}</p>
+        <p><span>Lớp</span>${SITE.className}</p>
+        <p><span>Học phần</span>${SITE.course} (${SITE.courseCode})</p>
       </div>
-      <div>
-        <p><strong>Liêm chính học thuật</strong></p>
-        <p>Công cụ AI đã sử dụng được ghi rõ trong từng bài và tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</p>
-      </div>
+      <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>
     </div>
   </footer>`;
 
@@ -69,6 +71,7 @@ const PROJECTS = [
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "Đóng" : "Menu";
   });
 
   // Điều hướng trước/sau cho trang bài tập
@@ -77,10 +80,10 @@ const PROJECTS = [
   if (pager && i >= 0) {
     const prev = PROJECTS[i - 1], next = PROJECTS[i + 1];
     pager.innerHTML = `
-      ${prev ? `<a class="prev" href="${prev.id}.html"><small>← Bài trước</small>Bài ${i}. ${prev.title}</a>` : "<span></span>"}
+      ${prev ? `<a class="pager-card prev" href="${prev.id}.html"><small>← Bài trước</small>Bài ${i}. ${prev.title}</a>` : "<span></span>"}
       <a class="btn back" href="../projects.html">Về trang Dự án</a>
-      ${next ? `<a class="next" href="${next.id}.html"><small>Bài tiếp theo →</small>Bài ${i + 2}. ${next.title}</a>`
-             : `<a class="next" href="../conclusion.html"><small>Tiếp theo →</small>Trang Tổng kết</a>`}`;
+      ${next ? `<a class="pager-card next" href="${next.id}.html"><small>Bài tiếp theo →</small>Bài ${i + 2}. ${next.title}</a>`
+             : `<a class="pager-card next" href="../conclusion.html"><small>Tiếp theo →</small>Trang Tổng kết</a>`}`;
   }
 
   const todos = document.querySelectorAll(".todo").length;
