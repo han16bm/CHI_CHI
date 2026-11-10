@@ -4,80 +4,95 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dự án · Quỳnh Hương</title>
-  <meta name="description" content="Danh mục 6 bài tập của học phần INF2501 — Portfolio Quỳnh Hương.">
+  <meta name="description" content="Sáu bài tập thực hành của học phần INF2501 — sáu chòm sao trong hành trình học kỹ năng số của Quỳnh Hương.">
+  <meta name="theme-color" content="#050711">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Dự án · Quỳnh Hương">
+  <meta property="og:description" content="Sáu bài tập thực hành của học phần INF2501 — sáu chòm sao trong hành trình học kỹ năng số của Quỳnh Hương.">
+  <meta property="og:url" content="https://quynhhuong-pi.vercel.app/projects.html">
+  <meta property="og:image" content="https://quynhhuong-pi.vercel.app/assets/img/about/avatar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
   <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="projects">
 <div id="site-header"></div>
 
 <main id="main">
-  <header class="page-head container">
-    <span class="eyebrow">Dự án</span>
-    <h1>Sáu bài tập, sáu kỹ năng số</h1>
-    <p class="lead">Mỗi bài tương ứng một chương của học phần, được trình bày theo cùng một cấu trúc ba phần, kèm ghi chú minh bạch về việc sử dụng AI.</p>
-    <ul class="legend">
+  <header class="page-hero container">
+    <span class="label" data-reveal>Dự án · 6 bài tập thực hành</span>
+    <h1 data-reveal style="--d:.1s">Sáu chòm sao <em>tri thức</em></h1>
+    <p class="lead" data-reveal style="--d:.2s">Mỗi bài tương ứng một chương của học phần, được trình bày theo cùng một cấu trúc ba phần, kèm ghi chú minh bạch về việc sử dụng AI.</p>
+    <ul class="legend" data-reveal style="--d:.3s">
       <li><span class="badge">a</span>Mục tiêu bài tập</li>
       <li><span class="badge">b</span>Quá trình thực hiện</li>
       <li><span class="badge">c</span>Sản phẩm cuối cùng</li>
     </ul>
   </header>
 
-  <section class="section">
+  <section class="section tight">
     <div class="container">
-      <div class="grid cols-3">
-        <a class="card pcard" href="projects/bai-1.html">
-          <div class="pcard-top"><span class="pcard-num">01</span><span class="chip">Chương 1 · Mục 1.4</span></div>
+      <div class="constellations" data-reveal>
+        <a class="cst" href="projects/bai-1.html" style="--tone:rgba(240,140,188,.24)">
+          <div class="cst-top"><span class="cst-num">01</span><span class="cst-chap">Chương 1 · Mục 1.4</span></div>
+          <div class="cst-art" data-cst="1"></div>
           <h3>Thao tác cơ bản với tệp tin và thư mục</h3>
           <p>Cấu trúc thư mục tối ưu và quy tắc đặt tên tệp cho tư liệu học tập, kèm ảnh minh họa.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
-        <a class="card pcard" href="projects/bai-2.html">
-          <div class="pcard-top"><span class="pcard-num">02</span><span class="chip">Chương 2 · Mục 2.4</span></div>
+        <a class="cst" href="projects/bai-2.html" style="--tone:rgba(59,130,246,.26)">
+          <div class="cst-top"><span class="cst-num">02</span><span class="cst-chap">Chương 2 · Mục 2.4</span></div>
+          <div class="cst-art" data-cst="2"></div>
           <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
           <p>Tìm kiếm học thuật bằng toán tử nâng cao và bảng đánh giá độ tin cậy của nguồn tin.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
-        <a class="card pcard" href="projects/bai-3.html">
-          <div class="pcard-top"><span class="pcard-num">03</span><span class="chip">Chương 3 · Mục 3.4</span></div>
+        <a class="cst" href="projects/bai-3.html" style="--tone:rgba(139,92,246,.28)">
+          <div class="cst-top"><span class="cst-num">03</span><span class="cst-chap">Chương 3 · Mục 3.4</span></div>
+          <div class="cst-art" data-cst="3"></div>
           <h3>Viết Prompt hiệu quả cho các tác vụ học tập</h3>
           <p>So sánh Prompt ban đầu với Prompt cải tiến và kết quả đầu ra tương ứng từ AI.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
-        <a class="card pcard" href="projects/bai-4.html">
-          <div class="pcard-top"><span class="pcard-num">04</span><span class="chip">Chương 4 · Mục 4.4</span></div>
+        <a class="cst" href="projects/bai-4.html" style="--tone:rgba(103,232,249,.18)">
+          <div class="cst-top"><span class="cst-num">04</span><span class="cst-chap">Chương 4 · Mục 4.4</span></div>
+          <div class="cst-art" data-cst="4"></div>
           <h3>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
           <p>Minh chứng dùng công cụ quản lý dự án nhóm và cách các thành viên phối hợp trực tuyến.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
-        <a class="card pcard" href="projects/bai-5.html">
-          <div class="pcard-top"><span class="pcard-num">05</span><span class="chip">Chương 5 · Mục 5.4</span></div>
+        <a class="cst" href="projects/bai-5.html" style="--tone:rgba(240,140,188,.24)">
+          <div class="cst-top"><span class="cst-num">05</span><span class="cst-chap">Chương 5 · Mục 5.4</span></div>
+          <div class="cst-art" data-cst="5"></div>
           <h3>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
           <p>Sản phẩm nội dung số hoàn thiện, tạo ra với sự hỗ trợ của AI tạo sinh và ghi rõ phần AI.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
-        <a class="card pcard" href="projects/bai-6.html">
-          <div class="pcard-top"><span class="pcard-num">06</span><span class="chip">Chương 6 · Mục 6.4</span></div>
+        <a class="cst" href="projects/bai-6.html" style="--tone:rgba(99,102,241,.26)">
+          <div class="cst-top"><span class="cst-num">06</span><span class="cst-chap">Chương 6 · Mục 6.4</span></div>
+          <div class="cst-art" data-cst="6"></div>
           <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
           <p>Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm, dựa trên những gì đã tìm hiểu.</p>
-          <span class="more">Xem bài →</span>
+          <span class="more">Khám phá</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
+  <section class="section">
     <div class="container">
-      <div class="cta">
-        <span class="eyebrow">Tổng kết</span>
-        <h2>Nhìn lại hành trình</h2>
+      <div class="cta" data-reveal>
+        <span class="label">Tổng kết</span>
+        <h2>Nhìn lại <em>hành trình</em></h2>
         <p>Trải nghiệm, kỹ năng quan trọng nhất và những thách thức khi xây dựng Portfolio này.</p>
         <div class="btn-row center">
-          <a class="btn primary" href="conclusion.html">Đọc tổng kết</a>
+          <a class="btn primary" href="conclusion.html">Đọc tổng kết <span class="arrow">→</span></a>
           <a class="btn" href="index.html">Về trang Giới thiệu</a>
         </div>
       </div>

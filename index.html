@@ -3,45 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Giới thiệu · Quỳnh Hương</title>
-  <meta name="description" content="Portfolio học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo (INF2501) của Quỳnh Hương, sinh viên Sư phạm Âm nhạc.">
+  <title>Giới thiệu · Quỳnh Hương — Vũ trụ của âm nhạc và những ước mơ</title>
+  <meta name="description" content="Portfolio học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo (INF2501) của Quỳnh Hương, sinh viên Sư phạm Âm nhạc, Trường ĐHSP Nghệ thuật Trung ương.">
+  <meta name="theme-color" content="#050711">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Quỳnh Hương — Vũ trụ của âm nhạc và những ước mơ">
+  <meta property="og:description" content="Portfolio kỹ năng số của một sinh viên Sư phạm Âm nhạc: 6 bài tập thực hành, hành trình học tập và những ước mơ.">
+  <meta property="og:url" content="https://quynhhuong-pi.vercel.app/">
+  <meta property="og:image" content="https://quynhhuong-pi.vercel.app/assets/img/about/avatar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
   <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="about">
 <div id="site-header"></div>
 
 <main id="main">
-  <!-- Hero: dùng tên ngắn "Quỳnh Hương" -->
+  <!-- HERO: dùng tên ngắn "Quỳnh Hương" -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">Sư phạm Âm nhạc · Portfolio INF2501</span>
-        <h1>Quỳnh Hương</h1>
-        <p class="lead">Sinh viên Sư phạm Âm nhạc, mong muốn trở thành một giáo viên âm nhạc sáng tạo và tận tâm — người đưa âm nhạc đến gần hơn với học trò.</p>
-        <ul class="hero-meta">
-          <li>🎓 ĐHSP Nghệ thuật Trung ương</li>
-          <li>📚 Lớp INF2501_2</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn primary" href="projects.html">Xem dự án</a>
+        <span class="label" data-reveal>Portfolio cá nhân · Sư phạm Âm nhạc</span>
+        <h1 class="display" data-reveal style="--d:.1s">Vũ trụ của <em>âm nhạc</em> &amp; những ước mơ.</h1>
+        <p class="hero-hello" data-reveal style="--d:.25s">Xin chào, mình là Quỳnh Hương.</p>
+        <p class="lead" data-reveal style="--d:.35s">Sinh viên Sư phạm Âm nhạc, mong muốn trở thành một giáo viên âm nhạc sáng tạo và tận tâm — người đưa âm nhạc đến gần hơn với học trò.</p>
+        <div class="btn-row" data-reveal style="--d:.45s">
+          <a class="btn primary" href="projects.html">Xem dự án <span class="arrow">→</span></a>
           <a class="btn" href="#gioi-thieu">Tìm hiểu về mình</a>
         </div>
       </div>
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="assets/img/about/avatar.jpg" alt="Ảnh đại diện Đinh Thị Quỳnh Hương" width="800" height="1000"></div>
-        <div class="sticker"><img src="assets/img/logo.svg" alt="" width="34" height="34">Xin chào!</div>
+      <div class="orbit-scene" data-reveal style="--d:.2s">
+        <div class="orb" aria-hidden="true"></div>
+        <div class="ring" aria-hidden="true"><div class="spin"></div></div>
+        <div class="ring r2" aria-hidden="true"><div class="spin"></div></div>
+        <div class="portrait"><img src="assets/img/about/avatar.jpg" alt="Ảnh chân dung Đinh Thị Quỳnh Hương ôm bó hoa hồng" width="800" height="1000" fetchpriority="high"></div>
+        <div class="hello-chip"><img src="assets/img/logo.svg" alt="" width="34" height="34">Xin chào!</div>
+        <span class="note-float n1" aria-hidden="true">♪</span>
+        <span class="note-float n2" aria-hidden="true">♫</span>
+        <span class="note-float n3" aria-hidden="true">✦</span>
       </div>
     </div>
+    <a class="scroll-cue" href="#con-so">Cuộn để khám phá<span></span></a>
   </section>
 
-  <section class="section tight" aria-label="Portfolio trong con số">
+  <section class="section tight" id="con-so" aria-label="Portfolio trong con số">
     <div class="container">
-      <div class="card stats">
+      <div class="stats" data-reveal>
         <div><strong>9</strong><span>Trang nội dung</span></div>
         <div><strong>6</strong><span>Bài tập thực hành</span></div>
         <div><strong>6</strong><span>Chương học phần</span></div>
@@ -50,96 +63,142 @@
     </div>
   </section>
 
-  <!-- Giới thiệu chi tiết: dùng họ tên đầy đủ -->
+  <!-- VỀ MÌNH: dùng họ tên đầy đủ -->
   <section class="section" id="gioi-thieu">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Về mình</span>
-        <h2>Xin chào, mình là Đinh Thị Quỳnh Hương</h2>
+    <div class="container about">
+      <div class="about-art" data-reveal aria-hidden="true">
+        <div class="orbit"><div class="spin"></div></div>
+        <div class="orbit o2"><div class="spin" style="animation-duration:52s;animation-direction:reverse"></div></div>
+        <div class="core"><img src="assets/img/logo.svg" alt="" width="80" height="80"></div>
+        <span class="tag t1">🎼 Âm nhạc</span>
+        <span class="tag t2">🐱 Mèo</span>
+        <span class="tag t3">✈️ Du lịch</span>
       </div>
-      <dl class="card facts">
-        <div><dt>Họ và tên</dt><dd>Đinh Thị Quỳnh Hương</dd></div>
-        <div><dt>Ngành học</dt><dd>Sư phạm Âm nhạc</dd></div>
-        <div><dt>Mã sinh viên</dt><dd>2552210185</dd></div>
-        <div><dt>Lớp</dt><dd>INF2501_2</dd></div>
-      </dl>
-      <p class="intro-text">Ngoài giờ học, mình thích chơi với mèo, đi du lịch và đi concert nghe nhạc — những điều giúp mình nạp lại năng lượng và tìm thêm cảm hứng cho âm nhạc.</p>
-    </div>
-  </section>
-
-  <section class="section band" id="so-thich">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Sở thích</span>
-        <h2>Những điều làm mình vui</h2>
-      </div>
-      <div class="grid cols-3">
-        <figure class="card hobby">
-          <img src="assets/img/about/meo.jpg" alt="Chú mèo trắng nằm ngủ trên ổ cào móng" width="1000" height="750" loading="lazy">
-          <figcaption class="hobby-body"><h3>🐱 Chơi với mèo</h3><p>Bạn nhỏ bốn chân luôn chờ mình ở nhà.</p></figcaption>
-        </figure>
-        <figure class="card hobby">
-          <img src="assets/img/about/du-lich.jpg" alt="Thung lũng ruộng bậc thang và núi đồi dưới trời mây hồng" width="1000" height="750" loading="lazy">
-          <figcaption class="hobby-body"><h3>✈️ Đi du lịch</h3><p>Mây, núi và ruộng bậc thang trong chuyến đi Sa Pa.</p></figcaption>
-        </figure>
-        <figure class="card hobby">
-          <img src="assets/img/about/concert.jpg" alt="Sân khấu concert với nghệ sĩ mặc đồ trắng và mưa giấy" width="980" height="735" loading="lazy">
-          <figcaption class="hobby-body"><h3>🎤 Đi concert</h3><p>Nơi mình được hòa mình vào âm nhạc cùng khán giả.</p></figcaption>
-        </figure>
+      <div>
+        <span class="label" data-reveal>Về mình</span>
+        <h2 data-reveal style="--d:.1s">Xin chào, mình là <em>Đinh Thị Quỳnh Hương</em></h2>
+        <p class="about-text" data-reveal style="--d:.2s">Ngoài giờ học, mình thích chơi với mèo, đi du lịch và đi concert nghe nhạc — những điều giúp mình nạp lại năng lượng và tìm thêm cảm hứng cho âm nhạc.</p>
+        <dl class="meta" data-reveal style="--d:.3s">
+          <div><dt>Ngành học</dt><dd>Sư phạm Âm nhạc</dd></div>
+          <div><dt>Trường</dt><dd>ĐHSP Nghệ thuật Trung ương</dd></div>
+          <div><dt>Mã sinh viên</dt><dd>2552210185</dd></div>
+          <div><dt>Lớp</dt><dd>INF2501_2</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <section class="section" id="dinh-huong">
+  <section class="section" id="so-thich">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Định hướng</span>
-        <h2>Mục tiêu học tập và định hướng phát triển</h2>
+      <div class="section-head center" data-reveal>
+        <span class="label">Sở thích</span>
+        <h2>Vũ trụ nhỏ <em>của mình</em></h2>
+        <p>Ba điều nhỏ bé giúp mình nạp năng lượng và tìm cảm hứng cho âm nhạc.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot-tile tile-a" data-reveal>
+          <img src="assets/img/about/meo-doc.jpg" alt="Chú mèo trắng nằm ngửa ngủ trên ổ cào móng" width="744" height="1200" loading="lazy">
+          <figcaption><span class="no">01</span><h3>Chơi với mèo</h3><p>Bạn nhỏ bốn chân luôn chờ mình ở nhà.</p></figcaption>
+        </figure>
+        <figure class="shot-tile tile-b" data-reveal style="--d:.1s">
+          <img src="assets/img/about/du-lich-ngang.jpg" alt="Thung lũng ruộng bậc thang và núi đồi Sa Pa dưới trời mây hồng" width="1400" height="788" loading="lazy">
+          <figcaption><span class="no">02</span><h3>Đi du lịch</h3><p>Mây, núi và ruộng bậc thang trong chuyến đi Sa Pa.</p></figcaption>
+        </figure>
+        <figure class="shot-tile tile-c" data-reveal style="--d:.2s">
+          <img src="assets/img/about/concert-ngang.jpg" alt="Sân khấu concert với các nghệ sĩ mặc đồ trắng giữa mưa giấy" width="1200" height="675" loading="lazy">
+          <figcaption><span class="no">03</span><h3>Đi concert</h3><p>Nơi mình được hòa mình vào âm nhạc cùng khán giả.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hanh-trinh">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <span class="label">Hành trình</span>
+        <h2>Mục tiêu học tập &amp; <em>định hướng phát triển</em></h2>
         <p>Từ việc học hôm nay đến công việc mơ ước ngày mai.</p>
       </div>
-      <div class="grid cols-4 roadmap">
-        <div class="road-step"><span class="dot">01</span><h3>Học hỏi</h3><p>Không ngừng học hỏi, mở rộng hiểu biết với những điều mới mỗi ngày.</p></div>
-        <div class="road-step"><span class="dot">02</span><h3>Chuyên môn</h3><p>Nắm vững kiến thức âm nhạc chuyên sâu và phương pháp giảng dạy âm nhạc.</p></div>
-        <div class="road-step"><span class="dot">03</span><h3>Kỹ năng</h3><p>Rèn luyện kỹ năng sư phạm cùng các kỹ năng bổ trợ, trong đó có kỹ năng số.</p></div>
-        <div class="road-step"><span class="dot">04</span><h3>Nghề nghiệp</h3><p>Trở thành giáo viên Âm nhạc sáng tạo, tận tâm tại trường học hoặc trung tâm nghệ thuật.</p></div>
-      </div>
-      <p class="principle">🌱 Ước mơ xa hơn: mở một trung tâm giảng dạy âm nhạc của riêng mình.</p>
+      <ol class="journey">
+        <li class="milestone" data-reveal><span class="marker" aria-hidden="true">✦</span><div class="body"><span class="no">01</span><h3>Học hỏi</h3><p>Không ngừng học hỏi, mở rộng hiểu biết với những điều mới mỗi ngày.</p></div></li>
+        <li class="milestone" data-reveal><span class="marker" aria-hidden="true">♪</span><div class="body"><span class="no">02</span><h3>Chuyên môn</h3><p>Nắm vững kiến thức âm nhạc chuyên sâu và phương pháp giảng dạy âm nhạc.</p></div></li>
+        <li class="milestone" data-reveal><span class="marker" aria-hidden="true">✧</span><div class="body"><span class="no">03</span><h3>Kỹ năng</h3><p>Rèn luyện kỹ năng sư phạm cùng các kỹ năng bổ trợ, trong đó có kỹ năng số.</p></div></li>
+        <li class="milestone" data-reveal><span class="marker" aria-hidden="true">★</span><div class="body"><span class="no">04</span><h3>Nghề nghiệp</h3><p>Trở thành giáo viên Âm nhạc sáng tạo, tận tâm tại trường học hoặc trung tâm nghệ thuật.</p></div></li>
+        <li class="milestone dream" data-reveal><span class="marker" aria-hidden="true">♫</span><div class="body"><span class="no">Ước mơ xa hơn</span><h3>Trung tâm âm nhạc của riêng mình</h3><p>Khởi nghiệp, mở một trung tâm giảng dạy âm nhạc của riêng mình.</p></div></li>
+      </ol>
     </div>
   </section>
 
   <!-- Mục tiêu Portfolio: AI (Claude) soạn theo định hướng của Quỳnh Hương — đã ghi nhận ở trang Tổng kết -->
-  <section class="section band" id="muc-tieu-portfolio">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Portfolio này để làm gì</span>
-        <h2>Mục tiêu của Portfolio</h2>
+  <section class="section" id="muc-tieu-portfolio">
+    <div class="container purpose">
+      <div class="sticky" data-reveal>
+        <span class="label">Portfolio này để làm gì</span>
+        <h2>Mục tiêu của <em>Portfolio</em></h2>
+        <p class="lead" style="margin-top:22px">Portfolio nối câu chuyện của mình với những bài tập thực hành của học phần — và là bước đầu cho hồ sơ nghề nghiệp sau này.</p>
+        <p class="muted" style="margin-top:18px">Mọi công cụ AI được dùng đều ghi rõ mục đích ở từng bài và tại <a href="conclusion.html#ai">trang Tổng kết</a>.</p>
       </div>
-      <div class="grid cols-2">
-        <div class="card goal"><span class="num">01</span><div><h3>Hồ sơ năng lực số</h3><p>Trình bày lại 6 bài tập của 6 chương, cho thấy cả sản phẩm cuối cùng lẫn quá trình làm ra nó.</p></div></div>
-        <div class="card goal"><span class="num">02</span><div><h3>Bước đầu của hồ sơ dạy học</h3><p>Tập quản lý tư liệu khoa học — nền tảng để lưu giáo án, bản nhạc, video thị phạm sau này.</p></div></div>
-        <div class="card goal"><span class="num">03</span><div><h3>Lưu trữ và chia sẻ</h3><p>Gom tệp PDF, hình ảnh, video và liên kết về một nơi, công khai và dễ gửi cho thầy cô, bạn bè.</p></div></div>
-        <div class="card goal"><span class="num">04</span><div><h3>Nền móng thương hiệu cá nhân</h3><p>Giới thiệu năng lực với nhà trường, phụ huynh và học viên — hữu ích khi mở trung tâm âm nhạc.</p></div></div>
-      </div>
-      <p class="center muted" style="margin-top:32px">Mọi công cụ AI được dùng đều ghi rõ mục đích ở từng bài và tại <a href="conclusion.html#ai">trang Tổng kết</a>.</p>
+      <ol class="purpose-list">
+        <li data-reveal><h3>Hồ sơ năng lực số</h3><p>Trình bày lại 6 bài tập của 6 chương, cho thấy cả sản phẩm cuối cùng lẫn quá trình làm ra nó.</p></li>
+        <li data-reveal><h3>Bước đầu của hồ sơ dạy học</h3><p>Tập quản lý tư liệu khoa học — nền tảng để lưu giáo án, bản nhạc, video thị phạm sau này.</p></li>
+        <li data-reveal><h3>Lưu trữ và chia sẻ</h3><p>Gom tệp PDF, hình ảnh, video và liên kết về một nơi, công khai và dễ gửi cho thầy cô, bạn bè.</p></li>
+        <li data-reveal><h3>Nền móng thương hiệu cá nhân</h3><p>Giới thiệu năng lực với nhà trường, phụ huynh và học viên — hữu ích khi mở trung tâm âm nhạc.</p></li>
+      </ol>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="du-an">
     <div class="container">
-      <div class="cta">
-        <span class="eyebrow">Dự án</span>
-        <h2>Khám phá 6 bài tập thực hành</h2>
-        <p>Mỗi bài là một kỹ năng số, trình bày đủ mục tiêu, quá trình thực hiện và sản phẩm cuối cùng.</p>
-        <ul class="pill-links">
-          <li><a href="projects/bai-1.html"><b>01</b>Tệp tin và thư mục</a></li>
-          <li><a href="projects/bai-2.html"><b>02</b>Tìm kiếm học thuật</a></li>
-          <li><a href="projects/bai-3.html"><b>03</b>Viết Prompt</a></li>
-          <li><a href="projects/bai-4.html"><b>04</b>Hợp tác trực tuyến</a></li>
-          <li><a href="projects/bai-5.html"><b>05</b>AI tạo sinh</a></li>
-          <li><a href="projects/bai-6.html"><b>06</b>AI có trách nhiệm</a></li>
-        </ul>
-        <div class="btn-row center"><a class="btn primary" href="projects.html">Xem dự án</a></div>
+      <div class="section-head center" data-reveal>
+        <span class="label">Khám phá 6 bài tập thực hành</span>
+        <h2>Sáu chòm sao <em>tri thức</em></h2>
+        <p>Mỗi bài tập là một chòm sao trong hành trình học kỹ năng số — đủ mục tiêu, quá trình thực hiện và sản phẩm cuối cùng.</p>
       </div>
+      <div class="constellations" data-reveal>
+        <a class="cst" href="projects/bai-1.html" style="--tone:rgba(240,140,188,.24)">
+          <div class="cst-top"><span class="cst-num">01</span><span class="cst-chap">Chương 1 · Mục 1.4</span></div>
+          <div class="cst-art" data-cst="1"></div>
+          <h3>Thao tác cơ bản với tệp tin và thư mục</h3>
+          <p>Cấu trúc thư mục tối ưu và quy tắc đặt tên tệp cho tư liệu học tập, kèm ảnh minh họa.</p>
+          <span class="more">Khám phá</span>
+        </a>
+        <a class="cst" href="projects/bai-2.html" style="--tone:rgba(59,130,246,.26)">
+          <div class="cst-top"><span class="cst-num">02</span><span class="cst-chap">Chương 2 · Mục 2.4</span></div>
+          <div class="cst-art" data-cst="2"></div>
+          <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
+          <p>Tìm kiếm học thuật bằng toán tử nâng cao và bảng đánh giá độ tin cậy của nguồn tin.</p>
+          <span class="more">Khám phá</span>
+        </a>
+        <a class="cst" href="projects/bai-3.html" style="--tone:rgba(139,92,246,.28)">
+          <div class="cst-top"><span class="cst-num">03</span><span class="cst-chap">Chương 3 · Mục 3.4</span></div>
+          <div class="cst-art" data-cst="3"></div>
+          <h3>Viết Prompt hiệu quả cho các tác vụ học tập</h3>
+          <p>So sánh Prompt ban đầu với Prompt cải tiến và kết quả đầu ra tương ứng từ AI.</p>
+          <span class="more">Khám phá</span>
+        </a>
+        <a class="cst" href="projects/bai-4.html" style="--tone:rgba(103,232,249,.18)">
+          <div class="cst-top"><span class="cst-num">04</span><span class="cst-chap">Chương 4 · Mục 4.4</span></div>
+          <div class="cst-art" data-cst="4"></div>
+          <h3>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
+          <p>Minh chứng dùng công cụ quản lý dự án nhóm và cách các thành viên phối hợp trực tuyến.</p>
+          <span class="more">Khám phá</span>
+        </a>
+        <a class="cst" href="projects/bai-5.html" style="--tone:rgba(240,140,188,.24)">
+          <div class="cst-top"><span class="cst-num">05</span><span class="cst-chap">Chương 5 · Mục 5.4</span></div>
+          <div class="cst-art" data-cst="5"></div>
+          <h3>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
+          <p>Sản phẩm nội dung số hoàn thiện, tạo ra với sự hỗ trợ của AI tạo sinh và ghi rõ phần AI.</p>
+          <span class="more">Khám phá</span>
+        </a>
+        <a class="cst" href="projects/bai-6.html" style="--tone:rgba(99,102,241,.26)">
+          <div class="cst-top"><span class="cst-num">06</span><span class="cst-chap">Chương 6 · Mục 6.4</span></div>
+          <div class="cst-art" data-cst="6"></div>
+          <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
+          <p>Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm, dựa trên những gì đã tìm hiểu.</p>
+          <span class="more">Khám phá</span>
+        </a>
+      </div>
+      <div class="btn-row center"><a class="btn primary" href="projects.html">Xem dự án <span class="arrow">→</span></a></div>
     </div>
   </section>
 </main>
