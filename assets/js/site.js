@@ -77,6 +77,7 @@ function constellationSVG(n) {
         </ul>
       </nav>
       <div class="nav-actions">
+        <button class="music-toggle" type="button" aria-pressed="false" aria-label="Bật nhạc nền" title="Bật nhạc nền"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
         <button class="theme-toggle" type="button"></button>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       </div>
@@ -107,7 +108,7 @@ function constellationSVG(n) {
         <p><span>Lớp</span>${SITE.className}</p>
         <p><span>Học phần</span>${SITE.course} (${SITE.courseCode})</p>
       </div>
-      <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>
+      <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Nhạc nền không lời tự sinh bằng Web Audio API · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>
     </div>
   </footer>`;
 
@@ -174,6 +175,73 @@ function constellationSVG(n) {
     }
   });
   paintThemeButton();
+
+  // ---------- Nhạc nền ----------
+  const musicBtn = document.querySelector(".music-toggle");
+  const store = (k, v) => { try { v === undefined ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) { /* bỏ qua */ } };
+  const recall = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  const theme = () => (docEl.dataset.theme === "dark" ? "dark" : "light");
+  let toastTimer = 0;
+  const toast = (text) => {
+    let el = document.querySelector(".music-toast");
+    if (!el) { el = document.createElement("div"); el.className = "music-toast"; el.setAttribute("role", "status"); body.appendChild(el); }
+    el.textContent = text;
+    el.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
+  };
+  const paintMusic = () => {
+    const playing = typeof Music !== "undefined" && Music.on;
+    musicBtn.classList.toggle("playing", playing);
+    musicBtn.setAttribute("aria-pressed", String(playing));
+    const label = playing ? `Tắt nhạc nền (đang phát: ${Music.title})` : "Bật nhạc nền";
+    musicBtn.setAttribute("aria-label", label); musicBtn.title = label;
+  };
+  const startMusic = () => { Music.start(theme()); paintMusic(); toast(`♪ Đang phát: ${Music.title}`); };
+  if (typeof Music === "undefined") musicBtn.hidden = true;
+  else {
+    musicBtn.addEventListener("click", () => {
+      if (Music.on) { Music.stop(); store("music"); paintMusic(); toast("Đã tắt nhạc nền"); }
+      else { startMusic(); store("music", "on"); }
+    });
+    // Đã bật ở trang trước: trình duyệt cần một lần chạm/bấm mới cho phát tiếp
+    if (recall("music") === "on") {
+      const resumeOnce = (e) => {
+        if (e.target.closest && e.target.closest(".music-toggle")) return;
+        if (!Music.on) startMusic();
+      };
+      addEventListener("pointerdown", resumeOnce, { once: true });
+      addEventListener("keydown", resumeOnce, { once: true });
+    }
+    document.addEventListener("themechange", () => {
+      Music.setScene(theme());
+      if (Music.on) { paintMusic(); toast(`♪ Chuyển sang: ${Music.title}`); }
+    });
+    document.addEventListener("visibilitychange", () => (document.hidden ? Music.pause() : Music.resume()));
+  }
+
+  // ---------- Hiệu ứng khi bấm: vòng sáng + sao/nốt nhạc ----------
+  if (!reduce) {
+    let lastBurst = 0;
+    addEventListener("pointerdown", (e) => {
+      if (e.target.closest(".theme-toggle, input, textarea, select")) return;
+      const now = performance.now();
+      if (now - lastBurst < 90) return;
+      lastBurst = now;
+      const el = document.createElement("div");
+      el.className = "click-burst";
+      el.setAttribute("aria-hidden", "true");
+      el.style.left = `${e.clientX}px`; el.style.top = `${e.clientY}px`;
+      const glyphs = ["✦", "♪", "✧", "♫", "✦", "·", "✧"];
+      let html = "<b></b>";
+      glyphs.forEach((g, k) => {
+        const a = (k / glyphs.length) * 6.283 + Math.random() * 0.6, d = 22 + Math.random() * 26;
+        html += `<i style="--dx:${(Math.cos(a) * d).toFixed(0)}px;--dy:${(Math.sin(a) * d - 10).toFixed(0)}px">${g}</i>`;
+      });
+      el.innerHTML = html;
+      body.appendChild(el);
+      setTimeout(() => el.remove(), 900);
+    }, { passive: true });
+  }
 
   const onScroll = () => header.classList.toggle("scrolled", scrollY > 24);
   addEventListener("scroll", onScroll, { passive: true });
