@@ -69,7 +69,6 @@ function constellationSVG(n) {
   <header class="site-header">
     <div class="container nav-bar">
       <a class="brand" href="${root}index.html"><img src="${logo}" alt="" width="40" height="40">${SITE.shortName}</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" aria-label="Điều hướng chính">
         <ul>
           <li><a href="${root}index.html"${cur(page === "about")}>Giới thiệu</a></li>
@@ -77,6 +76,10 @@ function constellationSVG(n) {
           <li><a href="${root}conclusion.html"${cur(page === "conclusion")}>Tổng kết</a></li>
         </ul>
       </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button"></button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
     </div>
   </header>`;
 
@@ -118,6 +121,60 @@ function constellationSVG(n) {
     toggle.textContent = open ? "Đóng" : "Menu";
     body.classList.toggle("menu-open", open);
   });
+  // Giao diện: mặc định hồng – trắng; "dark" = vũ trụ tối. Lựa chọn được nhớ trong trình duyệt.
+  const docEl = document.documentElement;
+  const themeBtn = document.querySelector(".theme-toggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const paintThemeButton = () => {
+    const dark = docEl.dataset.theme === "dark";
+    themeBtn.textContent = dark ? "☀" : "☾";
+    const label = dark ? "Chuyển sang giao diện hồng – trắng" : "Chuyển sang giao diện vũ trụ tối";
+    themeBtn.setAttribute("aria-label", label);
+    themeBtn.title = label;
+    if (themeMeta) themeMeta.content = dark ? "#050711" : "#fdf6f9";
+  };
+  const applyTheme = () => {
+    const dark = docEl.dataset.theme !== "dark";
+    if (dark) docEl.dataset.theme = "dark"; else delete docEl.dataset.theme;
+    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) { /* trình duyệt chặn lưu trữ: chỉ đổi trong phiên này */ }
+    paintThemeButton();
+    document.dispatchEvent(new Event("themechange"));
+  };
+  // Hiệu ứng "lucid dream": vòng sáng óng ánh + sao lấp lánh bay lên từ nút bấm
+  const dreamBurst = (x, y) => {
+    const veil = document.createElement("div");
+    veil.className = "dream-veil";
+    veil.setAttribute("aria-hidden", "true");
+    veil.style.setProperty("--tx", `${x}px`);
+    veil.style.setProperty("--ty", `${y}px`);
+    let sparks = "";
+    for (let k = 0; k < 16; k++) {
+      const a = Math.random() * 6.283, d = 60 + Math.random() * 220;
+      sparks += `<i style="--dx:${(Math.cos(a) * d).toFixed(0)}px;--dy:${(Math.sin(a) * d - 60).toFixed(0)}px;--dl:${(Math.random() * 0.35).toFixed(2)}s;--sz:${(6 + Math.random() * 10).toFixed(0)}px">✦</i>`;
+    }
+    veil.innerHTML = `<b></b>${sparks}`;
+    body.appendChild(veil);
+    setTimeout(() => veil.remove(), 1700);
+  };
+  themeBtn.addEventListener("click", () => {
+    const r = themeBtn.getBoundingClientRect();
+    const x = r.left + r.width / 2, y = r.top + r.height / 2;
+    docEl.style.setProperty("--tx", `${x}px`);
+    docEl.style.setProperty("--ty", `${y}px`);
+    if (reduce) { applyTheme(); return; }
+    if (document.startViewTransition) {
+      docEl.classList.add("dreaming");
+      const t = document.startViewTransition(() => { applyTheme(); dreamBurst(x, y); });
+      t.finished.finally(() => docEl.classList.remove("dreaming"));
+    } else {
+      docEl.classList.add("theme-fade");
+      applyTheme();
+      dreamBurst(x, y);
+      setTimeout(() => docEl.classList.remove("theme-fade"), 800);
+    }
+  });
+  paintThemeButton();
+
   const onScroll = () => header.classList.toggle("scrolled", scrollY > 24);
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -182,7 +239,20 @@ function starfield(reduce) {
   document.body.prepend(c);
   const ctx = c.getContext("2d");
   let w = 0, h = 0, stars = [], shoot = null, last = 0, raf = 0;
-  const tints = ["255,255,255", "255,255,255", "255,255,255", "255,196,224", "190,210,255"];
+  // Màu sao lấy từ biến CSS để đổi theo giao diện sáng/tối
+  let tints = [], alphaK = 1, shootRGB = "255,255,255";
+  const readTheme = () => {
+    const cs = getComputedStyle(document.documentElement);
+    tints = cs.getPropertyValue("--star-tints").trim().split("|");
+    alphaK = parseFloat(cs.getPropertyValue("--star-alpha")) || 1;
+    shootRGB = cs.getPropertyValue("--shoot").trim() || "255,255,255";
+  };
+  readTheme();
+  document.addEventListener("themechange", () => {
+    readTheme();
+    for (const s of stars) s.c = tints[(Math.random() * tints.length) | 0];
+    draw(performance.now());
+  });
 
   function resize() {
     const dpr = Math.min(devicePixelRatio || 1, 2);
@@ -202,7 +272,7 @@ function starfield(reduce) {
     ctx.clearRect(0, 0, w, h);
     const sy = scrollY;
     for (const s of stars) {
-      const alpha = reduce ? s.a : s.a * (0.65 + 0.35 * Math.sin(s.t + (time / 1000) * s.s));
+      const alpha = alphaK * (reduce ? s.a : s.a * (0.65 + 0.35 * Math.sin(s.t + (time / 1000) * s.s)));
       let y = (s.y - sy * s.z * 0.2) % h;
       if (y < 0) y += h;
       ctx.globalAlpha = alpha;
@@ -215,8 +285,8 @@ function starfield(reduce) {
       const k = shoot.life / 46, len = 120;
       const x = shoot.x - shoot.life * 9, y = shoot.y + shoot.life * 4.2;
       const g = ctx.createLinearGradient(x, y, x + len, y - len * 0.47);
-      g.addColorStop(0, "rgba(255,255,255,0.9)");
-      g.addColorStop(1, "rgba(255,255,255,0)");
+      g.addColorStop(0, `rgba(${shootRGB},0.9)`);
+      g.addColorStop(1, `rgba(${shootRGB},0)`);
       ctx.globalAlpha = 1 - k;
       ctx.strokeStyle = g;
       ctx.lineWidth = 1.2;
