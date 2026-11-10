@@ -194,11 +194,13 @@ li + li { margin-top: 6px; }
     opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s, transform .25s var(--ease), visibility .25s;
   }
   #site-nav.open { opacity: 1; visibility: visible; transform: none; }
+  /* Menu đóng: mọi liên kết bên trong (kể cả menu con) không được nhận chạm */
+  #site-nav:not(.open), #site-nav:not(.open) * { visibility: hidden !important; pointer-events: none; }
   #site-nav > ul { flex-direction: column; gap: 0; }
   #site-nav > ul > li > a { padding: 16px 4px; font: 500 1.35rem var(--serif); color: var(--text); border-bottom: 1px solid var(--line); }
   #site-nav > ul > li > a[aria-current="page"]::after { left: auto; right: 8px; bottom: auto; top: 50%; margin-top: -2.5px; }
   .has-sub > a::before { display: none; }
-  .sub { position: static; width: auto; opacity: 1; visibility: visible; transform: none; background: transparent; border: 0; box-shadow: none; padding: 6px 0 10px; backdrop-filter: none; }
+  .sub { position: static; width: auto; opacity: 1; visibility: inherit; transform: none; background: transparent; border: 0; box-shadow: none; padding: 6px 0 10px; backdrop-filter: none; }
 }
 body.menu-open { overflow: hidden; }
 
