@@ -387,3 +387,26 @@ function starfield(reduce) {
     });
   }
 }
+
+// Phóng to ảnh minh chứng ngay trên trang: bấm ra ngoài ảnh, nút × hoặc Esc để đóng.
+(function () {
+  const links = document.querySelectorAll(".part figure a[href]");
+  if (!links.length || typeof HTMLDialogElement !== "function") return;
+  const box = document.createElement("dialog");
+  box.className = "lightbox";
+  box.setAttribute("aria-label", "Ảnh phóng to");
+  box.innerHTML = '<img alt=""><p></p><button type="button" class="lightbox-close" aria-label="Đóng ảnh">×</button>';
+  document.body.append(box);
+  const img = box.querySelector("img"), cap = box.querySelector("p");
+  links.forEach((a) => a.addEventListener("click", (e) => {
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button) return; // vẫn cho mở tab mới như cũ
+    e.preventDefault();
+    const fig = a.closest("figure");
+    img.src = a.href;
+    img.alt = (a.querySelector("img") || {}).alt || "";
+    cap.textContent = (fig.querySelector("figcaption") || {}).textContent || "";
+    box.showModal();
+  }));
+  box.addEventListener("click", (e) => { if (e.target !== img) box.close(); });
+  box.addEventListener("close", () => img.removeAttribute("src"));
+})();

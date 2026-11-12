@@ -569,10 +569,11 @@ figure.todo { min-height: 160px; display: grid; place-items: center; text-align:
 .footer-brand img { width: 44px; height: 44px; }
 .footer-brand strong { display: block; color: var(--text); font: 500 1.15rem var(--serif); }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 6px 28px; }
-.footer-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; padding: 24px 0; border-top: 1px solid var(--line); }
+.footer-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 2.4fr); gap: 16px 24px; padding: 24px 0; border-top: 1px solid var(--line); }
 .footer-info span { display: block; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
 .footer-info p { margin: 2px 0 0; color: var(--text); }
 .footer-bottom { padding: 18px 0 32px; border-top: 1px solid var(--line); font-size: .82rem; }
+@media (max-width: 1023px) and (min-width: 761px) { .footer-info { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) {
   .finale { padding-top: 112px; }
   .site-footer { margin-top: 96px; }
@@ -676,3 +677,15 @@ html.theme-fade, html.theme-fade * { transition: background-color .7s var(--ease
   0% { opacity: 1; transform: translate(-50%, -50%) scale(.4); }
   100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(40deg); }
 }
+
+/* ---------- Phóng to ảnh minh chứng ---------- */
+.lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; cursor: zoom-out; }
+.lightbox[open] { display: grid; place-content: center; justify-items: center; gap: 12px; }
+.lightbox::backdrop { background: rgba(10, 8, 20, .84); backdrop-filter: blur(4px); }
+.lightbox img { max-width: min(94vw, 1600px); max-height: 84vh; width: auto; height: auto; border-radius: 12px; box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .7); cursor: default; background: #fff; }
+.lightbox p { margin: 0; padding: 0 16px; max-width: 90vw; color: #f4ecf2; font-size: .9rem; text-align: center; }
+.lightbox-close { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .45); background: rgba(0, 0, 0, .45); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.lightbox-close:hover { background: rgba(194, 71, 122, .8); }
+html:has(.lightbox[open]) { overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) { .lightbox[open] img { animation: lb-in .25s ease-out; } }
+@keyframes lb-in { from { opacity: 0; transform: scale(.96); } }
