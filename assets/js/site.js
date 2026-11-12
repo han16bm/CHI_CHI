@@ -110,7 +110,7 @@ function constellationSVG(n) {
         <p><span>Giảng viên</span>${SITE.lecturer}</p>
         <p><span>Học phần</span>${SITE.course} (${SITE.courseCode})</p>
       </div>
-      <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Nhạc nền không lời tự sinh bằng Web Audio API · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>
+      <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>
     </div>
   </footer>`;
 
