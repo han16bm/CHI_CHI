@@ -7,6 +7,7 @@ const SITE = {
   course: "Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo",
   courseCode: "INF2501",
   school: "Trường Đại học Sư phạm Nghệ thuật Trung ương",
+  lecturer: "Vũ Việt Hoàng",
 };
 
 const PROJECTS = [
@@ -106,6 +107,7 @@ function constellationSVG(n) {
       <div class="footer-info">
         <p><span>Mã sinh viên</span>${SITE.studentId}</p>
         <p><span>Lớp</span>${SITE.className}</p>
+        <p><span>Giảng viên</span>${SITE.lecturer}</p>
         <p><span>Học phần</span>${SITE.course} (${SITE.courseCode})</p>
       </div>
       <div class="footer-bottom">© 2026 ${SITE.fullName} · ${SITE.school} · Nhạc nền không lời tự sinh bằng Web Audio API · Công cụ AI đã sử dụng được ghi rõ tại <a href="${root}conclusion.html#ai">trang Tổng kết</a>.</div>

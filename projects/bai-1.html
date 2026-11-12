@@ -31,7 +31,7 @@
     <nav class="breadcrumb" aria-label="Vị trí trang"><a href="../projects.html">Dự án</a> / Bài 1</nav>
     <span class="label">Chương 1: Máy tính và các thiết bị ngoại vi</span>
     <h1>Bài 1. Thao tác cơ bản với tệp tin và thư mục</h1>
-    <p class="lead"><span class="todo">1–2 câu tóm tắt: bài này bạn đã làm gì và sản phẩm là gì.</span></p>
+    <p class="lead">Thực hành đủ 12 yêu cầu thao tác tệp và thư mục trên Windows (tạo, đổi tên, phân cấp, sao chép, di chuyển, xóa tạm, xóa vĩnh viễn), ghi minh chứng từng bước và lập bảng đối chiếu bản chất các thao tác.</p>
     <div class="meta-row"><span class="chip">Bài tập 1 (mục 1.4)</span><span class="chip">Mục tiêu · Quá trình · Sản phẩm</span></div>
   </header>
 
@@ -46,17 +46,20 @@
     </aside>
 
     <article>
+
       <section class="part" id="muc-tieu">
         <h2><span class="badge">a</span>Mục tiêu bài tập</h2>
         <h3>Yêu cầu</h3>
-        <p>Thiết lập một cấu trúc thư mục tối ưu và quy tắc đặt tên tệp nhất quán để lưu trữ tài liệu học tập; trình bày kèm ảnh chụp minh họa.</p>
-        <p class="todo">Chép/tóm tắt đề bài gốc của Bài tập 1 (mục 1.4) trong giáo trình để mục tiêu khớp đúng đề.</p>
+        <p>Bài thực hành 1.4 – Bài tập 1: thực hiện tuần tự các thao tác cơ bản với tệp tin và thư mục trên hệ điều hành, gồm tạo thư mục và tệp, đổi tên, tạo thư mục con, sao chép, di chuyển, xóa vào Thùng rác và xóa vĩnh viễn; chụp ảnh minh chứng sau mỗi bước.</p>
+        <p>Mục tiêu mình đặt ra: thao tác thành thạo và hiểu rõ bản chất từng thao tác quản lý dữ liệu, làm nền cho việc tổ chức tài liệu học tập (giáo án, bản nhạc, tệp ghi âm) gọn gàng, dễ tìm lại.</p>
+        <h3>Môi trường thực hành</h3>
+        <p>Máy tính cá nhân chạy Windows, công cụ File Explorer mặc định; vị trí thực hành ở ổ dữ liệu <code>D:</code>, tệp văn bản <code>.txt</code>.</p>
         <h3>Kỹ năng được rèn luyện</h3>
         <ul>
-      <li>Tổ chức, lưu trữ tài nguyên số theo cấu trúc phân cấp</li>
-      <li>Đặt tên tệp nhất quán, dễ tìm kiếm và sắp xếp</li>
-      <li>Thao tác tạo, đổi tên, di chuyển, sao lưu tệp và thư mục</li>
-      <li class="todo">Đối chiếu, bổ sung theo đề bài gốc.</li>
+      <li>Tạo, đổi tên tệp và tổ chức thư mục theo cấp</li>
+      <li>Đặt tên thư mục, tệp rõ ràng, không dấu cách tùy tiện</li>
+      <li>Phân biệt sao chép – di chuyển – xóa tạm – xóa vĩnh viễn và khả năng khôi phục của từng thao tác</li>
+      <li>Dùng phím tắt hệ thống: <code>Windows+E</code>, <code>F2</code>, <code>Ctrl+C</code>, <code>Ctrl+X</code>, <code>Ctrl+V</code>, <code>Shift+Delete</code></li>
         </ul>
       </section>
 
@@ -64,58 +67,89 @@
         <h2><span class="badge">b</span>Tóm tắt quá trình thực hiện</h2>
         <h3>Các bước thực hiện</h3>
         <ol class="steps">
-      <li><span class="todo">Bước 1: làm gì, bằng công cụ gì, vì sao.</span></li>
-      <li><span class="todo">Bước 2: …</span></li>
-      <li><span class="todo">Bước 3: … (thêm/bớt bước cho đúng thực tế)</span></li>
+      <li><strong>Mở File Explorer</strong> bằng <code>Windows+E</code> hoặc biểu tượng thư mục trên thanh tác vụ, chọn <em>This PC</em> rồi vào ổ <code>D:</code> để làm việc độc lập.
+        <figure><a href="../assets/img/bai-1/hinh-01.png"><img src="../assets/img/bai-1/hinh-01.png" alt="Biểu tượng File Explorer trên thanh tác vụ Windows" width="588" height="91" loading="lazy"></a><figcaption>Hình 1. Biểu tượng File Explorer trên thanh tác vụ</figcaption></figure></li>
+      <li><strong>Tạo thư mục chính</strong>: chuột phải → <em>New → Folder</em>, đặt tên theo quy ước <code>ThucHanh_hotensinhvien</code> → <code>ThucHanh_DinhThiQuynhHuong</code>, rồi mở thư mục.
+        <figure><a href="../assets/img/bai-1/hinh-02.jpg"><img src="../assets/img/bai-1/hinh-02.jpg" alt="Thư mục ThucHanh_DinhThiQuynhHuong trong ổ D" width="1600" height="900" loading="lazy"></a><figcaption>Hình 2. Thư mục thực hành đã tạo trong ổ D:</figcaption></figure></li>
+      <li><strong>Tạo và đổi tên tệp</strong>: <em>New → Text Document</em> tạo <code>GhiChu.txt</code>; chọn tệp, nhấn <code>F2</code> (hoặc <em>Rename</em>) đổi thành <code>GhiChuQuanTrong.txt</code>.
+        <figure><a href="../assets/img/bai-1/hinh-03.jpg"><img src="../assets/img/bai-1/hinh-03.jpg" alt="Tệp GhiChuQuanTrong.txt sau khi đổi tên" width="1600" height="901" loading="lazy"></a><figcaption>Hình 3. Tệp GhiChuQuanTrong.txt sau khi đổi tên</figcaption></figure></li>
+      <li><strong>Tạo thư mục con</strong> <code>TaiLieu</code> bên trong thư mục chính để thiết lập cấu trúc phân nhánh.
+        <figure><a href="../assets/img/bai-1/hinh-04.jpg"><img src="../assets/img/bai-1/hinh-04.jpg" alt="Thư mục con TaiLieu cạnh tệp đã đổi tên" width="1600" height="901" loading="lazy"></a><figcaption>Hình 4. Thư mục con TaiLieu cạnh tệp đã đổi tên</figcaption></figure></li>
+      <li><strong>Sao chép</strong> <code>GhiChuQuanTrong.txt</code> (<code>Ctrl+C</code>), mở <code>TaiLieu</code>, dán (<code>Ctrl+V</code>): có bản sao trong <code>TaiLieu</code>, tệp gốc vẫn ở thư mục chính.</li>
+      <li><strong>Di chuyển</strong>: tạo <code>DiChuyen.txt</code> ở thư mục chính, <code>Ctrl+X</code> (biểu tượng tệp mờ đi) rồi <code>Ctrl+V</code> trong <code>TaiLieu</code>: tệp rời hẳn vị trí cũ.
+        <figure><a href="../assets/img/bai-1/hinh-05.jpg"><img src="../assets/img/bai-1/hinh-05.jpg" alt="Hai tệp GhiChuQuanTrong.txt và DiChuyen.txt trong thư mục TaiLieu" width="1600" height="902" loading="lazy"></a><figcaption>Hình 5. Hai tệp trong TaiLieu sau thao tác sao chép và di chuyển</figcaption></figure></li>
+      <li><strong>Xóa vào Thùng rác</strong>: trong <code>TaiLieu</code>, chọn bản sao <code>GhiChuQuanTrong.txt</code> và nhấn <code>Delete</code>; tệp chuyển vào Recycle Bin.
+        <figure><a href="../assets/img/bai-1/hinh-06.jpg"><img src="../assets/img/bai-1/hinh-06.jpg" alt="Thư mục TaiLieu chỉ còn DiChuyen.txt sau khi xóa tạm" width="1600" height="902" loading="lazy"></a><figcaption>Hình 6. Sau khi xóa tạm, TaiLieu chỉ còn DiChuyen.txt</figcaption></figure></li>
+      <li><strong>Xóa vĩnh viễn</strong>: chọn <code>DiChuyen.txt</code>, nhấn <code>Shift+Delete</code>; hộp thoại “Are you sure you want to permanently delete this file?” hiện ra, chọn <em>Yes</em>. Tệp bị xóa mà không qua Thùng rác.
+        <figure><a href="../assets/img/bai-1/hinh-07.jpg"><img src="../assets/img/bai-1/hinh-07.jpg" alt="Hộp thoại xác nhận xóa vĩnh viễn tệp" width="1600" height="903" loading="lazy"></a><figcaption>Hình 7. Hộp thoại xác nhận xóa vĩnh viễn (Shift+Delete)</figcaption></figure></li>
         </ol>
 
         <h3>Công cụ đã sử dụng</h3>
         <div class="table-wrap"><table>
           <thead><tr><th>Công cụ</th><th>Dùng để làm gì</th><th>Vì sao chọn</th></tr></thead>
-          <tbody><tr><td colspan="3"><span class="todo">Mỗi công cụ một dòng.</span></td></tr></tbody>
+          <tbody>
+            <tr><td>File Explorer (Windows)</td><td>Thực hiện toàn bộ thao tác tạo, đổi tên, sao chép, di chuyển, xóa</td><td>Công cụ quản lý tệp mặc định của Windows, có sẵn trên máy, đúng yêu cầu bài</td></tr>
+            <tr><td>Phím tắt hệ thống</td><td><code>Windows+E</code>, <code>F2</code>, <code>Ctrl+C/X/V</code>, <code>Delete</code>, <code>Shift+Delete</code></td><td>Thao tác nhanh, chính xác hơn so với dùng chuột</td></tr>
+            <tr><td>Công cụ chụp màn hình</td><td>Ghi minh chứng sau mỗi bước</td><td>Để đối chiếu vị trí tệp trước và sau thao tác</td></tr>
+          </tbody>
         </table></div>
 
         <div class="callout" id="ai">
           <h3>Ghi nhận sử dụng AI</h3>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Công cụ AI</th><th>Mục đích</th><th>AI hỗ trợ phần nào</th><th>Mình tự làm / kiểm chứng gì</th></tr></thead>
-            <tbody><tr><td colspan="4"><span class="todo">Mỗi công cụ AI một dòng. Nếu không dùng AI, thay bảng bằng câu “Bài này không sử dụng công cụ AI.”</span></td></tr></tbody>
-          </table></div>
+          <p>Báo cáo bài này không ghi nhận sử dụng công cụ AI: toàn bộ thao tác và ảnh chụp do mình tự thực hiện trên máy.</p>
         </div>
 
         <h3>Khó khăn và cách giải quyết</h3>
         <div class="table-wrap"><table>
           <thead><tr><th>Khó khăn gặp phải</th><th>Cách giải quyết</th></tr></thead>
-          <tbody><tr><td colspan="2"><span class="todo">Ít nhất 2 khó khăn có thật, kèm cách bạn đã xử lý.</span></td></tr></tbody>
+          <tbody>
+            <tr><td>Sao chép và di chuyển cùng kết thúc bằng <code>Ctrl+V</code> nên dễ nhầm kết quả.</td><td>Sau mỗi thao tác kiểm tra lại cả thư mục nguồn và thư mục đích, rồi tổng hợp thành bảng đối chiếu (mục c).</td></tr>
+            <tr><td><code>Shift+Delete</code> bỏ qua Thùng rác nên xóa nhầm là không khôi phục được bằng Restore.</td><td>Đọc kỹ tên tệp trong hộp thoại xác nhận trước khi chọn <em>Yes</em>; tệp còn cần thì chỉ dùng <code>Delete</code> thường.</td></tr>
+            <tr><td>Tên thư mục có dấu tiếng Việt và dấu cách dễ gây lỗi đường dẫn, khó gõ.</td><td>Đặt tên không dấu, viết hoa chữ cái đầu mỗi từ, nối bằng dấu gạch dưới: <code>ThucHanh_DinhThiQuynhHuong</code>.</td></tr>
+          </tbody>
         </table></div>
 
         <h3>Bài học rút ra</h3>
-        <p class="todo">2–3 câu tự viết: điều bạn sẽ làm khác nếu làm lại, kỹ năng nào dùng được cho môn khác.</p>
+        <p>Sao chép phù hợp khi cần giữ bản ở vị trí ban đầu, di chuyển phù hợp khi cần đổi nơi lưu. Mình sẽ giữ thói quen đặt tên thư mục rõ ràng theo cấp, không để tệp bừa bãi ở Desktop hay Downloads, và luôn kiểm tra kỹ trước khi xóa vĩnh viễn. Cách tổ chức này dùng được ngay cho kho bản nhạc, tệp ghi âm và giáo án của ngành Sư phạm Âm nhạc.</p>
       </section>
 
       <section class="part" id="san-pham">
         <h2><span class="badge">c</span>Sản phẩm cuối cùng</h2>
-        <p class="muted">Cấu trúc thư mục, quy tắc đặt tên tệp và ảnh chụp minh họa thực tế.</p>
+        <p class="muted">Cấu trúc thư mục thực hành, quy tắc đặt tên, bảng đối chiếu thao tác và báo cáo PDF đầy đủ.</p>
     <div><h3>Cấu trúc thư mục</h3>
-    <pre class="todo">Dán cây thư mục thật của bạn, ví dụ dạng:
-HocTap/
-├── 01_INF2501/
-│   ├── BaiGiang/
-│   └── BaiTap/
-└── ...</pre>
-    <h3>Quy tắc đặt tên tệp</h3></div>
+    <pre>D:\
+└── ThucHanh_DinhThiQuynhHuong\
+    ├── GhiChuQuanTrong.txt     (đổi tên từ GhiChu.txt)
+    └── TaiLieu\
+        ├── GhiChuQuanTrong.txt (bản sao → sau đó xóa vào Thùng rác)
+        └── DiChuyen.txt        (di chuyển từ thư mục chính → sau đó xóa vĩnh viễn)</pre>
+    <h3>Quy tắc đặt tên</h3></div>
     <div class="table-wrap"><table>
       <thead><tr><th>Thành phần</th><th>Quy ước</th><th>Ví dụ</th></tr></thead>
-      <tbody><tr><td colspan="3"><span class="todo">Mỗi thành phần trong tên tệp một dòng (ngày, môn, nội dung, phiên bản…).</span></td></tr></tbody>
+      <tbody>
+        <tr><td>Mục đích</td><td>Từ đầu tên cho biết thư mục dùng để làm gì</td><td><code>ThucHanh</code></td></tr>
+        <tr><td>Chủ sở hữu</td><td>Họ tên không dấu, viết hoa chữ cái đầu mỗi từ</td><td><code>DinhThiQuynhHuong</code></td></tr>
+        <tr><td>Phân cách</td><td>Dấu gạch dưới, không dùng dấu cách</td><td><code>ThucHanh_DinhThiQuynhHuong</code></td></tr>
+        <tr><td>Nội dung tệp</td><td>Tên mô tả nội dung, không dấu</td><td><code>GhiChuQuanTrong.txt</code>, <code>TaiLieu</code></td></tr>
+      </tbody>
     </table></div>
-    <div><h3>Vì sao tổ chức như vậy</h3>
-    <p class="todo">Giải thích lý do: dễ tìm, sắp xếp theo thời gian, tránh trùng tên, thuận tiện sao lưu…</p></div>
-    <div class="compare">
-    <figure class="todo">Ảnh chụp: cây thư mục trong File Explorer / Google Drive<br><small>Lưu vào assets/img/bai-1/</small></figure>
-    <figure class="todo">Ảnh chụp: danh sách tệp đã đặt tên theo quy tắc<br><small>Lưu vào assets/img/bai-1/</small></figure>
-    </div>
-        <p><span class="todo">Link Google Drive/OneDrive của sản phẩm (đặt quyền “Bất kỳ ai có đường liên kết đều xem được”).</span></p>
+    <div><h3>Bảng đối chiếu kết quả</h3>
+    <p>Kiểm tra thư mục nguồn, thư mục đích và Thùng rác để phân biệt bốn thao tác:</p></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Thao tác</th><th>Cơ chế trên hệ điều hành</th><th>Vị trí nguồn</th><th>Vị trí đích / khả năng khôi phục</th></tr></thead>
+      <tbody>
+        <tr><td>Sao chép (<code>Ctrl+C</code> → <code>Ctrl+V</code>)</td><td>Tạo một bản dữ liệu mới, cấp định danh tệp mới</td><td>Vẫn còn tệp gốc</td><td>Có thêm bản sao trong <code>TaiLieu</code>; bản sao độc lập với tệp gốc</td></tr>
+        <tr><td>Di chuyển (<code>Ctrl+X</code> → <code>Ctrl+V</code>)</td><td>Cập nhật đường dẫn của tệp (cùng ổ đĩa)</td><td>Tệp rời vị trí cũ</td><td>Tệp xuất hiện trong <code>TaiLieu</code>; hoàn tác bằng <code>Ctrl+Z</code> hoặc di chuyển ngược lại</td></tr>
+        <tr><td>Xóa tạm (<code>Delete</code>)</td><td>Chuyển tệp vào Recycle Bin, dữ liệu chưa bị giải phóng</td><td>Tệp biến mất khỏi thư mục</td><td>Khôi phục được bằng <em>Restore</em> trong Thùng rác</td></tr>
+        <tr><td>Xóa vĩnh viễn (<code>Shift+Delete</code>)</td><td>Xóa bản ghi định danh tệp, vùng lưu trữ sẵn sàng bị ghi đè</td><td>Tệp biến mất khỏi thư mục</td><td>Thùng rác không có tệp để khôi phục; chỉ có thể thử cứu bằng phần mềm chuyên dụng</td></tr>
+      </tbody>
+    </table></div>
+    <div><h3>Báo cáo bài tập</h3>
+    <p>Báo cáo PDF gồm nhật ký 8 công đoạn, 8 hình minh chứng và bảng đối chiếu bản chất các thao tác.</p>
+    <p class="btn-row"><a class="btn primary" href="../assets/files/bai-1.pdf" target="_blank" rel="noopener">Mở báo cáo PDF <span class="arrow">→</span></a></p></div>
       </section>
+
+
 
       <nav class="pager" id="pager" aria-label="Chuyển bài tập"></nav>
     </article>

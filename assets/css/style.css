@@ -494,6 +494,11 @@ td strong { color: var(--text); font-weight: 500; }
 
 figure { margin: 26px 0; }
 figcaption { font-size: .86rem; color: var(--muted); margin-top: 12px; text-align: center; }
+.part figure img { margin-inline: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 14px 34px -22px rgba(43, 34, 48, .45); }
+.part figure a { display: block; cursor: zoom-in; }
+.steps figure { margin: 16px 0 4px; }
+.part ol:not(.steps) { max-width: var(--prose); }
+.part :not(pre) > code { overflow-wrap: anywhere; }
 .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 26px 0; }
 .compare > * { margin: 0; }
 @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
