@@ -31,7 +31,7 @@
     <nav class="breadcrumb" aria-label="Vị trí trang"><a href="../projects.html">Dự án</a> / Bài 3</nav>
     <span class="label">Chương 3: Tổng quan về trí tuệ nhân tạo</span>
     <h1>Bài 3. Viết Prompt hiệu quả cho các tác vụ học tập</h1>
-    <p class="lead">Thử nghiệm 3 tác vụ học tập về dạy học âm nhạc theo Orff-Schulwerk trên ChatGPT (GPT-4o), mỗi tác vụ 3 cấp Prompt (cơ bản → cải tiến → nâng cao), so sánh kết quả và rút ra nguyên tắc viết Prompt C–T–R–F.</p>
+    <p class="lead">Mình thử sử dụng ChatGPT (GPT-4o) để hỗ trợ ba nhiệm vụ liên quan đến phương pháp dạy học âm nhạc Orff-Schulwerk. Với mỗi nhiệm vụ, mình viết Prompt theo ba mức độ: cơ bản, cải tiến và nâng cao, rồi so sánh kết quả và rút ra nguyên tắc viết Prompt C–T–R–F.</p>
     <div class="meta-row"><span class="chip">Bài tập 2 (mục 3.4)</span><span class="chip">Mục tiêu · Quá trình · Sản phẩm</span></div>
   </header>
 
@@ -50,7 +50,7 @@
       <section class="part" id="muc-tieu">
         <h2><span class="badge">a</span>Mục tiêu bài tập</h2>
         <h3>Yêu cầu</h3>
-        <p>Viết Prompt cho tác vụ học tập, phân tích hạn chế của Prompt ban đầu, cải tiến Prompt và so sánh kết quả đầu ra từ AI.</p>
+        <p>Viết Prompt cho tác vụ học tập, nhận xét những điểm còn thiếu trong câu lệnh ban đầu, cải tiến Prompt và so sánh kết quả đầu ra từ AI.</p>
         <h3>Chủ đề mình chọn</h3>
         <p><strong>Phương pháp dạy học cảm thụ âm nhạc và tiết tấu theo triết lý Orff-Schulwerk kết hợp công nghệ số.</strong> Ba tác vụ được chọn vì đều là việc sinh viên Sư phạm Âm nhạc thường làm: tóm tắt tài liệu chuyên ngành, giải thích khái niệm khó cho học sinh, và soạn câu hỏi kiểm tra.</p>
         <div class="table-wrap"><table>
@@ -58,14 +58,14 @@
           <tbody>
             <tr><td>1. Tóm tắt bài đọc về Orff-Schulwerk</td><td>Rút ra nguyên lý sư phạm, kỹ thuật Body Percussion, quy trình ứng tác</td><td>Tóm tắt sơ sài, bỏ sót điều kiện sư phạm, nhầm trường phái</td><td>Thuật ngữ đúng, đủ 4 giai đoạn phát triển năng lực</td></tr>
             <tr><td>2. Giải thích Đa âm (Polyphony) và Phức điệu đối vị (Counterpoint)</td><td>Biến khái niệm trừu tượng thành kiến thức dễ hiểu cho học sinh phổ thông</td><td>Giải thích khô khan hoặc đơn giản hóa làm sai bản chất</td><td>Có ẩn dụ trực quan, ví dụ đối chiếu</td></tr>
-            <tr><td>3. Câu hỏi ôn tập theo thang Bloom</td><td>4 mức: Nhận biết, Thông hiểu, Vận dụng, Vận dụng cao cho chủ đề Tiết tấu và Cảm thụ</td><td>Câu hỏi ghi nhớ vụn vặt, phương án nhiễu lộ liễu</td><td>Bám chuẩn đầu ra, phân hóa được năng lực</td></tr>
+            <tr><td>3. Câu hỏi ôn tập theo thang Bloom</td><td>4 mức: Nhận biết, Thông hiểu, Vận dụng, Vận dụng cao cho chủ đề Tiết tấu và Cảm thụ</td><td>Câu hỏi ghi nhớ vụn vặt, phương án nhiễu lộ liễu</td><td>Bám chuẩn đầu ra, phân loại được mức độ hiểu bài của học sinh</td></tr>
           </tbody>
         </table></div>
         <h3>Kỹ năng được rèn luyện</h3>
         <ul>
       <li>Xác định rõ nhiệm vụ cần giao cho AI</li>
       <li>Cấu trúc Prompt: vai trò, bối cảnh, nhiệm vụ, định dạng, ràng buộc</li>
-      <li>Kỹ thuật Role-prompting, chia bước (Chain-of-Thought), đưa mẫu (Few-shot)</li>
+      <li>Xác định vai trò cho AI, chia nhiệm vụ thành các bước nhỏ để AI xử lý rõ ràng hơn, đưa ví dụ mẫu</li>
       <li>Đánh giá và kiểm chứng câu trả lời của AI bằng kiến thức chuyên môn</li>
         </ul>
       </section>
@@ -77,7 +77,7 @@
       <li><strong>Chọn chủ đề và 3 tác vụ</strong>, xác định mục tiêu, rủi ro và tiêu chí kiểm chứng cho từng tác vụ (bảng ở mục a).</li>
       <li><strong>Viết Prompt cơ bản</strong> (zero-shot, một câu ngắn) cho từng tác vụ và ghi nhận kết quả.</li>
       <li><strong>Viết Prompt cải tiến</strong>: thêm người đọc, độ dài, số phần, định dạng đầu ra.</li>
-      <li><strong>Viết Prompt nâng cao</strong>: thêm vai trò chuyên gia, chia bước, ràng buộc học thuật, yêu cầu riêng cho từng câu.</li>
+      <li><strong>Viết Prompt nâng cao</strong>: xác định vai trò cho AI, chia bước, ràng buộc học thuật, yêu cầu riêng cho từng câu.</li>
       <li><strong>So sánh</strong> 9 kết quả theo độ rõ, độ chính xác chuyên môn, khả năng dùng trong dạy học; kiểm tra thuật ngữ bằng tài liệu chuyên ngành.</li>
       <li><strong>Rút ra nguyên tắc</strong> viết Prompt cho sinh viên sư phạm.</li>
         </ol>
@@ -112,7 +112,7 @@
         </table></div>
 
         <h3>Bài học rút ra</h3>
-        <p>Thêm bối cảnh, vai trò và quy định đầu ra giúp kết quả dễ đọc và dễ đối chiếu với mục tiêu hơn. Với nhiệm vụ phức tạp như soạn câu hỏi âm nhạc, chỉ rõ mục tiêu của từng câu giúp mình kiểm tra độ phân hóa trước khi đưa vào lớp. Dù Prompt tốt đến đâu, người giáo viên âm nhạc vẫn phải là người kiểm chứng cuối cùng.</p>
+        <p>Thêm bối cảnh, vai trò và quy định đầu ra giúp kết quả dễ đọc và dễ đối chiếu với mục tiêu hơn. Với nhiệm vụ phức tạp như soạn câu hỏi âm nhạc, chỉ rõ mục tiêu của từng câu giúp mình kiểm tra khả năng phân loại mức độ hiểu bài của học sinh trước khi sử dụng trong giảng dạy. Dù sử dụng Prompt như thế nào, mình vẫn cần kiểm tra lại kết quả bằng kiến thức chuyên môn trước khi áp dụng vào giảng dạy.</p>
       </section>
 
       <section class="part" id="san-pham">
@@ -147,7 +147,7 @@
 
     <div><h3>Tác vụ 3. Câu hỏi ôn tập theo thang Bloom</h3></div>
     <div class="compare">
-      <div class="card"><h3>Prompt ban đầu</h3><pre>Tạo 5 câu hỏi ôn tập môn Âm nhạc lớp 7 về tiết tấu và cao độ.</pre><h3>Hạn chế</h3><p>Câu hỏi chỉ ở mức ghi nhớ, phương án sai quá hiển nhiên, không phân hóa được học sinh.</p></div>
+      <div class="card"><h3>Prompt ban đầu</h3><pre>Tạo 5 câu hỏi ôn tập môn Âm nhạc lớp 7 về tiết tấu và cao độ.</pre><h3>Hạn chế</h3><p>Câu hỏi chỉ ở mức ghi nhớ, phương án sai quá hiển nhiên, không phân loại được mức độ hiểu bài của học sinh.</p></div>
       <div class="card"><h3>Prompt cải tiến</h3><pre>Tạo bộ 4 câu hỏi trắc nghiệm 4 lựa chọn (A, B, C, D) ôn tập môn Âm nhạc lớp 7 về phân môn Đọc nhạc và Tiết tấu. Kèm đáp án đúng và lời giải thích ngắn gọn cho từng câu.</pre><h3>Điểm thay đổi</h3><p>Quy định số câu, 4 lựa chọn, đáp án và lời giải. Kết quả bao quát kiến thức nhưng chưa tách rõ các mức tư duy.</p></div>
     </div>
     <div><h3>Prompt nâng cao</h3>
@@ -164,7 +164,7 @@
     <div class="table-wrap"><table>
       <thead><tr><th>Thành phần</th><th>Nội dung trong Prompt của mình</th></tr></thead>
       <tbody>
-        <tr><td>Vai trò</td><td>Giảng viên Phương pháp Dạy học Âm nhạc / chuyên gia sư phạm âm nhạc / chuyên gia khảo thí</td></tr>
+        <tr><td>Vai trò (xác định vai trò cho AI)</td><td>Giảng viên Phương pháp Dạy học Âm nhạc / chuyên gia sư phạm âm nhạc / chuyên gia khảo thí</td></tr>
         <tr><td>Bối cảnh</td><td>Tài liệu Orff-Schulwerk kết hợp công nghệ số; giáo án cho học sinh phổ thông; Âm nhạc lớp 7</td></tr>
         <tr><td>Nhiệm vụ (chia bước)</td><td>Bước 1–2–3 hoặc Câu 1–4 với mục tiêu riêng theo mức Bloom</td></tr>
         <tr><td>Định dạng đầu ra</td><td>Khoảng 450 từ; bảng đối chiếu 3 dạng kết cấu; 4 phương án, đáp án và lý do loại phương án nhiễu</td></tr>
@@ -184,7 +184,7 @@
 
     <div><h3>Vì sao Prompt cải tiến hiệu quả hơn</h3>
     <ul>
-      <li><strong>Vai trò và bối cảnh</strong> định hướng độ khó, thuật ngữ và cách diễn đạt phù hợp người đọc.</li>
+      <li><strong>Xác định vai trò cho AI và nêu bối cảnh</strong> giúp định hướng độ khó, thuật ngữ và cách diễn đạt phù hợp người đọc.</li>
       <li><strong>Chia nhiệm vụ thành bước</strong> giúp dễ kiểm tra phần nào đã được trả lời; ma trận Bloom làm rõ kỹ năng cần đo ở từng câu.</li>
       <li><strong>Yêu cầu đầu ra cụ thể</strong> (số phần, độ dài, đáp án, lý do loại phương án sai) giúp đối chiếu kết quả với mục tiêu.</li>
     </ul>
